@@ -1,4 +1,5 @@
 import React from "react";
+import { SurfaceCard } from "./SurfaceCard";
 
 interface CardProps {
   children: React.ReactNode;
@@ -8,10 +9,8 @@ interface CardProps {
 
 export function Card({ children, className = "", accent }: CardProps) {
   return (
-    <div
-      className={`bg-paper rounded-xl shadow-soft-lift transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg ${accent ? accent : ""} ${className}`}
-    >
+    <SurfaceCard className={className} accent={accent}>
       {children}
-    </div>
+    </SurfaceCard>
   );
 }

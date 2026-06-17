@@ -10,6 +10,7 @@ import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { PaymentNetwork } from "@/components/three/PaymentNetwork";
 import { PolylineTitle } from "@/components/ui/PolylineTitle";
+import { HeroSection } from "@/components/ui/ClientHero";
 
 /* ─── Page Metadata ─── */
 export const metadata: Metadata = {
@@ -34,68 +35,17 @@ export const metadata: Metadata = {
 };
 
 /* ══════════════════════════════════════════════════════════════
-   1 ─ HERO
+   1 ─ HERO COMPONENTS & SECTION
    ══════════════════════════════════════════════════════════════ */
-function HeroSection() {
-  return (
-    <SectionBand bg="bg-canvas" id="hero" className="pt-12 md:pt-20 pb-12 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
-        {/* ── Left: Copy ── */}
-        <ScrollReveal direction="left" className="flex flex-col gap-6">
-          <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-ink">
-            Your Money,
-            <br />
-            <span className="text-accent-interactive">Your Power.</span>
-          </h1>
 
-          <p className="max-w-xl text-lg sm:text-xl text-ink-soft leading-relaxed font-body">
-            Owó Ẹyọ puts you in control. Send, save, spend, and grow your
-            money&nbsp;— all from one powerful platform built for modern Africa.
-          </p>
 
-          <div className="flex flex-wrap gap-4 mt-2">
-            <Button href="/register" size="lg">
-              Get Started Free
-            </Button>
-            <Button href="#how-it-works" variant="outline" size="lg">
-              See How It Works
-            </Button>
-          </div>
-
-          {/* Social proof pill */}
-          <div className="flex items-center gap-3 mt-4">
-            {/* Stacked avatars */}
-            <div className="flex -space-x-2">
-              {["bg-accent-gold", "bg-accent-teal", "bg-accent-interactive", "bg-accent-apricot"].map(
-                (bg, i) => (
-                  <span
-                    key={i}
-                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full ${bg} text-white text-xs font-bold ring-2 ring-canvas`}
-                  >
-                    {["AO", "CI", "FN", "TK"][i]}
-                  </span>
-                )
-              )}
-            </div>
-           
-          </div>
-        </ScrollReveal>
-
-        {/* ── Right: 3D Payment Network ── */}
-        {/* <div className="relative hidden md:block">
-          <PaymentNetwork />
-        </div> */}
-      </div>
-    </SectionBand>
-  );
-}
 
 /* ══════════════════════════════════════════════════════════════
    2 ─ TRUST BAR
    ══════════════════════════════════════════════════════════════ */
 function FirstBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#60a5fa] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-primary/45 whitespace-nowrap hover:text-primary transition-colors duration-300 select-none">
       FirstBank
     </span>
   );
@@ -103,7 +53,7 @@ function FirstBankLogo() {
 
 function PaystackLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#38bdf8] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
       Paystack
     </span>
   );
@@ -111,7 +61,7 @@ function PaystackLogo() {
 
 function FlutterwaveLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#fbbf24] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
       Flutterwave
     </span>
   );
@@ -119,7 +69,7 @@ function FlutterwaveLogo() {
 
 function GTBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#f97316] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
       GTBank
     </span>
   );
@@ -127,7 +77,7 @@ function GTBankLogo() {
 
 function AccessBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#818cf8] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
       Access Bank
     </span>
   );
@@ -135,7 +85,7 @@ function AccessBankLogo() {
 
 function InterswitchLogo() {
   return (
-    <span className="font-display font-bold text-lg text-[#4ade80] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
       Interswitch
     </span>
   );
@@ -154,8 +104,8 @@ function TrustBar() {
   );
 
   return (
-    <SectionBand bg="bg-[#09041a]" id="trust-bar" className="!py-10 border-b border-purple-950/20" data-theme="dark">
-      <p className="text-center text-sm text-slate-400 tracking-wider uppercase mb-8 font-body">
+    <SectionBand bg="bg-cloud" id="trust-bar" className="!py-10 border-b border-hairline/25">
+      <p className="text-center text-xs sm:text-sm text-ink-soft/50 tracking-wider uppercase mb-8 font-body font-semibold">
         Trusted by leading organizations across Africa
       </p>
       {/* Marquee container */}

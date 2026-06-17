@@ -14,7 +14,9 @@ const NAV_LINKS = [
   { href: "/#faq", label: "FAQ" },
 ] as const;
 
-function CowrieIcon({ className = "h-7 w-7" }: { className?: string }) {
+function CowrieIcon({ className = "h-7 w-7", light }: { className?: string; light?: boolean }) {
+  const strokeColor = light ? "#ffffff" : "#190066";
+  const lineStroke = light ? "rgba(255,255,255,0.4)" : "#190066";
   return (
     <svg
       className={className}
@@ -23,28 +25,29 @@ function CowrieIcon({ className = "h-7 w-7" }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <ellipse cx="16" cy="16" rx="11" ry="14" fill="#e5ffc3" stroke="#190066" strokeWidth="1.5" />
-      <ellipse cx="16" cy="16" rx="6" ry="11" fill="#fff1eb" stroke="#190066" strokeWidth="1" />
-      <line x1="16" y1="5" x2="16" y2="27" stroke="#190066" strokeWidth="1" strokeDasharray="2 2" />
+      <ellipse cx="16" cy="16" rx="11" ry="14" fill="#e5ffc3" stroke={strokeColor} strokeWidth="1.5" />
+      <ellipse cx="16" cy="16" rx="6" ry="11" fill="#fff1eb" stroke={strokeColor} strokeWidth="1" />
+      <line x1="16" y1="5" x2="16" y2="27" stroke={lineStroke} strokeWidth="1" strokeDasharray="2 2" />
     </svg>
   );
 }
 
-function HamburgerIcon({ open }: { open: boolean }) {
+function HamburgerIcon({ open, light }: { open: boolean; light?: boolean }) {
+  const bgClass = light ? "bg-white" : "bg-ink";
   return (
     <div className="flex flex-col justify-center items-center w-6 h-6 gap-[5px]">
       <span
-        className={`block h-[2px] w-5 bg-ink transition-all duration-300 origin-center ${
+        className={`block h-[2px] w-5 ${bgClass} transition-all duration-300 origin-center ${
           open ? "rotate-45 translate-y-[7px]" : ""
         }`}
       />
       <span
-        className={`block h-[2px] w-5 bg-ink transition-all duration-300 ${
+        className={`block h-[2px] w-5 ${bgClass} transition-all duration-300 ${
           open ? "opacity-0 scale-x-0" : ""
         }`}
       />
       <span
-        className={`block h-[2px] w-5 bg-ink transition-all duration-300 origin-center ${
+        className={`block h-[2px] w-5 ${bgClass} transition-all duration-300 origin-center ${
           open ? "-rotate-45 -translate-y-[7px]" : ""
         }`}
       />
@@ -104,7 +107,7 @@ export function Navbar() {
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           scrolled
-            ? "bg-paper/90 backdrop-blur-lg shadow-soft-lift"
+            ? "bg-paper/90 backdrop-blur-lg shadow-soft-lift border-b border-hairline/10"
             : "bg-transparent"
         }`}
       >
@@ -115,7 +118,7 @@ export function Navbar() {
             className="flex items-center gap-2 cursor-pointer group"
             aria-label="Owó Ẹyọ home"
           >
-            <CowrieIcon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+            <CowrieIcon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" light={false} />
             <span className="font-display font-bold text-xl sm:text-2xl text-primary">
               Owó Ẹyọ
             </span>
@@ -123,25 +126,32 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={`px-4 py-2 rounded-lg font-body text-sm font-medium transition-colors duration-200 cursor-pointer ${
-                    isActive(href)
-                      ? "text-accent-interactive bg-accent-sky/40"
-                      : "text-ink-soft hover:text-ink hover:bg-cloud/60"
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ href, label }) => {
+              const active = isActive(href);
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`px-4 py-2 rounded-lg font-body text-sm font-medium transition-all duration-300 cursor-pointer ${
+                      active
+                        ? "text-accent-interactive bg-accent-sky/40"
+                        : "text-ink-soft hover:text-ink hover:bg-cloud/60"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="primary" size="sm" href="/#contact">
+            <Button
+              variant="primary"
+              size="sm"
+              href="/#contact"
+            >
               Get Started
             </Button>
           </div>
@@ -151,11 +161,11 @@ export function Navbar() {
             ref={buttonRef}
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-cloud/60 cursor-pointer transition-colors"
+            className="lg:hidden p-2 rounded-lg cursor-pointer transition-colors hover:bg-cloud/60"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
-            <HamburgerIcon open={mobileOpen} />
+            <HamburgerIcon open={mobileOpen} light={false} />
           </button>
         </nav>
       </header>

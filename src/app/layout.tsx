@@ -1,22 +1,7 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
-
-const boldType = localFont({
-  src: "./fonts/bold_type.ttf",
-  variable: "--font-display",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -59,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${boldType.variable} ${dmSans.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col font-body bg-canvas">
         <Navbar />
