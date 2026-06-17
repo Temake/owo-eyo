@@ -8,7 +8,7 @@ import { AccordionItem } from "@/components/ui/AccordionItem";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { FeatureCard } from "@/components/ui/FeatureCard";
-import { InteractiveCowrie } from "@/components/ui/InteractiveCowrie";
+import { PaymentNetwork } from "@/components/three/PaymentNetwork";
 import { PolylineTitle } from "@/components/ui/PolylineTitle";
 
 /* ─── Page Metadata ─── */
@@ -38,24 +38,20 @@ export const metadata: Metadata = {
    ══════════════════════════════════════════════════════════════ */
 function HeroSection() {
   return (
-    <SectionBand bg="bg-canvas" id="hero" className="pt-10 md:pt-16 pb-12 overflow-hidden">
+    <SectionBand bg="bg-canvas" id="hero" className="pt-12 md:pt-20 pb-12 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
-        {/* ── Left: Copy & Vector Drawn Title ── */}
+        {/* ── Left: Copy ── */}
         <ScrollReveal direction="left" className="flex flex-col gap-6">
-          {/* Vector Drawn Animated shapes Title */}
-          <div className="w-full max-w-sm md:max-w-md">
-            <PolylineTitle />
-          </div>
+          <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight text-ink">
+            Your Money,
+            <br />
+            <span className="text-accent-interactive">Your Power.</span>
+          </h1>
 
-          <div className="flex flex-col gap-3">
-            <h1 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-primary tracking-tight leading-tight">
-              Your Money, <span className="text-accent-interactive">Your Power.</span>
-            </h1>
-            <p className="max-w-xl text-lg text-ink-soft leading-relaxed font-body">
-              Owó Ẹyọ puts you in control. Send, save, spend, and grow your
-              money&nbsp;— all from one powerful platform built for modern Africa.
-            </p>
-          </div>
+          <p className="max-w-xl text-lg sm:text-xl text-ink-soft leading-relaxed font-body">
+            Owó Ẹyọ puts you in control. Send, save, spend, and grow your
+            money&nbsp;— all from one powerful platform built for modern Africa.
+          </p>
 
           <div className="flex flex-wrap gap-4 mt-2">
             <Button href="/register" size="lg">
@@ -81,18 +77,14 @@ function HeroSection() {
                 )
               )}
             </div>
-            <p className="text-sm text-ink-soft">
-              <span className="font-semibold text-ink">2 million+</span> Nigerians trust Owó Ẹyọ
-            </p>
+           
           </div>
         </ScrollReveal>
 
-        {/* ── Right: Real-time 3D Interactive Mascot (Metamask Wolf Pattern) ── */}
-        <ScrollReveal direction="right" delay={200} className="relative block">
-          <div className="relative mx-auto w-full max-w-lg">
-            <InteractiveCowrie />
-          </div>
-        </ScrollReveal>
+        {/* ── Right: 3D Payment Network ── */}
+        {/* <div className="relative hidden md:block">
+          <PaymentNetwork />
+        </div> */}
       </div>
     </SectionBand>
   );
@@ -101,23 +93,81 @@ function HeroSection() {
 /* ══════════════════════════════════════════════════════════════
    2 ─ TRUST BAR
    ══════════════════════════════════════════════════════════════ */
+function FirstBankLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#60a5fa] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      FirstBank
+    </span>
+  );
+}
+
+function PaystackLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#38bdf8] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      Paystack
+    </span>
+  );
+}
+
+function FlutterwaveLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#fbbf24] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      Flutterwave
+    </span>
+  );
+}
+
+function GTBankLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#f97316] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      GTBank
+    </span>
+  );
+}
+
+function AccessBankLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#818cf8] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      Access Bank
+    </span>
+  );
+}
+
+function InterswitchLogo() {
+  return (
+    <span className="font-display font-bold text-lg text-[#4ade80] whitespace-nowrap opacity-50 hover:opacity-85 transition-opacity duration-300 select-none">
+      Interswitch
+    </span>
+  );
+}
+
 function TrustBar() {
-  const partners = ["FirstBank", "Paystack", "Flutterwave", "GTBank", "Access Bank", "Interswitch"];
+  const logos = (
+    <>
+      <FirstBankLogo />
+      <PaystackLogo />
+      <FlutterwaveLogo />
+      <GTBankLogo />
+      <AccessBankLogo />
+      <InterswitchLogo />
+    </>
+  );
 
   return (
-    <SectionBand bg="bg-paper" id="trust-bar" className="!py-10">
-      <p className="text-center text-sm text-ink-soft tracking-wider uppercase mb-8 font-body">
+    <SectionBand bg="bg-[#09041a]" id="trust-bar" className="!py-10 border-b border-purple-950/20" data-theme="dark">
+      <p className="text-center text-sm text-slate-400 tracking-wider uppercase mb-8 font-body">
         Trusted by leading organizations across Africa
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14">
-        {partners.map((name) => (
-          <span
-            key={name}
-            className="font-display font-bold text-lg sm:text-xl text-ink/20 hover:text-ink/50 transition-colors duration-300 select-none"
-          >
-            {name}
-          </span>
-        ))}
+      {/* Marquee container */}
+      <div className="overflow-hidden">
+        <div className="flex animate-marquee" style={{ width: "200%" }}>
+          <div className="flex shrink-0 items-center justify-around gap-10 sm:gap-16 w-1/2 px-4">
+            {logos}
+          </div>
+          <div className="flex shrink-0 items-center justify-around gap-10 sm:gap-16 w-1/2 px-4">
+            {logos}
+          </div>
+        </div>
       </div>
     </SectionBand>
   );
