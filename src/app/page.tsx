@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { SectionBand } from "@/components/ui/SectionBand";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { AccordionItem } from "@/components/ui/AccordionItem";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { FeatureCard } from "@/components/ui/FeatureCard";
-import { PaymentNetwork } from "@/components/three/PaymentNetwork";
-import { PolylineTitle } from "@/components/ui/PolylineTitle";
 import { HeroSection } from "@/components/ui/ClientHero";
 
 /* ─── Page Metadata ─── */
