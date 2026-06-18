@@ -230,6 +230,15 @@ function HeroShowcase() {
 function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-gradient-to-b from-[#fff1eb] via-white to-[#e9edf6]">
+      {/* Background Image seamless mirrored repeat */}
+      <div 
+        className="absolute inset-0 bg-repeat bg-left-top opacity-95"
+        style={{ 
+          backgroundImage: `url('/images/back-tile.jpg')`,
+          backgroundSize: '2160px 4670px'
+        }}
+      />
+      
       {/* Layer 2: Blurred radial gradients (light theme pastel with enhanced opacity/density) */}
       <div className="absolute top-[-5%] left-[-5%] w-[60%] h-[60%] rounded-full bg-accent-sky/35 blur-[120px] opacity-75" />
       <div className="absolute bottom-[5%] -right-[5%] w-[55%] h-[55%] rounded-full bg-accent-lime/40 blur-[105px] opacity-80" />

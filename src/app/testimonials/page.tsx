@@ -117,7 +117,7 @@ export default function TestimonialsPage() {
   return (
     <>
       {/* ── 1. Hero ──────────────────────────────────────────────── */}
-      <SectionBand bg="bg-canvas">
+      <SectionBand bg="bg-canvas" className="pt-32 pb-20 sm:pt-40">
         <div className="text-center max-w-3xl mx-auto">
           <ScrollReveal>
             <span className="inline-block px-4 py-1.5 rounded-pill bg-accent-lavender/60 text-primary font-display text-sm font-semibold tracking-wide mb-6">
