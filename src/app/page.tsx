@@ -124,11 +124,21 @@ function TrustBar() {
       {/* Marquee container */}
       <div className="overflow-hidden">
         <div className="flex animate-marquee" style={{ width: "200%" }}>
-          <div className="flex shrink-0 items-center justify-around gap-10 sm:gap-16 w-1/2 px-4">
-            {logos}
+          <div className="flex shrink-0 items-center gap-12 sm:gap-16 w-1/2 px-4">
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><FirstBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><PaystackLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><FlutterwaveLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><GTBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><AccessBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><InterswitchLogo /></div>
           </div>
-          <div className="flex shrink-0 items-center justify-around gap-10 sm:gap-16 w-1/2 px-4">
-            {logos}
+          <div className="flex shrink-0 items-center gap-12 sm:gap-16 w-1/2 px-4">
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><FirstBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><PaystackLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><FlutterwaveLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><GTBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><AccessBankLogo /></div>
+            <div className="shrink-0 min-w-[120px] flex items-center justify-center"><InterswitchLogo /></div>
           </div>
         </div>
       </div>
