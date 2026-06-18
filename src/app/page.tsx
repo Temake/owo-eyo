@@ -45,49 +45,65 @@ export const metadata: Metadata = {
    ══════════════════════════════════════════════════════════════ */
 function FirstBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-primary/45 whitespace-nowrap hover:text-primary transition-colors duration-300 select-none">
-      FirstBank
-    </span>
+    <img
+      src="/images/first.png"
+      alt="FirstBank"
+      className="h-8 sm:h-9 w-auto object-contain select-none cursor-pointer"
+    />
   );
 }
 
 function PaystackLogo() {
   return (
-    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
-      Paystack
-    </span>
+    <div className="flex items-center gap-1.5 select-none cursor-pointer">
+      <svg className="h-6 w-6 text-[#3ec9a5] shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12" cy="12" rx="10" ry="10" fill="#3ec9a5" />
+        <path d="M8.5 7h4c1.93 0 3.5 1.57 3.5 3.5S14.43 14 12.5 14H10v4H8.5V7zm4 5.5c1.1 0 2-.9 2-2s-.9-2-2-2H10v4h2.5z" fill="white" />
+      </svg>
+      <span className="font-display font-extrabold text-base sm:text-lg text-[#011b33] tracking-tight">
+        paystack
+      </span>
+    </div>
   );
 }
 
 function FlutterwaveLogo() {
   return (
-    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
-      Flutterwave
-    </span>
+    <img
+      src="/images/flutterwave.png"
+      alt="Flutterwave"
+      className="h-7 sm:h-8 w-auto object-contain select-none cursor-pointer"
+    />
   );
 }
 
 function GTBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
-      GTBank
-    </span>
+    <img
+      src="/images/gtco.png"
+      alt="GTBank"
+      className="h-7 sm:h-8 w-auto object-contain select-none cursor-pointer"
+    />
   );
 }
 
 function AccessBankLogo() {
   return (
-    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
-      Access Bank
-    </span>
+    <img
+      src="/images/access.png"
+      alt="Access Bank"
+      className="h-7 sm:h-8 w-auto object-contain select-none cursor-pointer"
+    />
   );
 }
 
 function InterswitchLogo() {
   return (
-    <span className="font-display font-bold text-lg text-slate-500/60 whitespace-nowrap hover:text-slate-800 transition-colors duration-300 select-none">
-      Interswitch
-    </span>
+    <img
+      src="/images/interswitch.png"
+      alt="Interswitch"
+      className="h-7 sm:h-8 w-auto object-contain select-none cursor-pointer"
+    />
   );
 }
 

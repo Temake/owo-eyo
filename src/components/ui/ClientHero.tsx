@@ -229,11 +229,12 @@ function HeroShowcase() {
 
 function HeroBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-gradient-to-b from-canvas via-white to-canvas">
-      {/* Layer 2: Blurred radial gradients (light theme pastel) */}
-      <div className="absolute top-[-10%] left-[-10%] w-[55%] h-[55%] rounded-full bg-accent-sky/20 blur-[130px] opacity-70" />
-      <div className="absolute bottom-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-accent-lime/30 blur-[120px] opacity-80" />
-      <div className="absolute top-[20%] right-[10%] w-[45%] h-[45%] rounded-full bg-accent-lavender/35 blur-[125px] opacity-75" />
+    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-gradient-to-b from-[#fff1eb] via-white to-[#e9edf6]">
+      {/* Layer 2: Blurred radial gradients (light theme pastel with enhanced opacity/density) */}
+      <div className="absolute top-[-5%] left-[-5%] w-[60%] h-[60%] rounded-full bg-accent-sky/35 blur-[120px] opacity-75" />
+      <div className="absolute bottom-[5%] -right-[5%] w-[55%] h-[55%] rounded-full bg-accent-lime/40 blur-[105px] opacity-80" />
+      <div className="absolute top-[15%] right-[5%] w-[50%] h-[50%] rounded-full bg-accent-lavender/45 blur-[115px] opacity-75" />
+      <div className="absolute bottom-[20%] left-[10%] w-[45%] h-[45%] rounded-full bg-accent-apricot/25 blur-[110px] opacity-70" />
       
       {/* Layer 3: Vertical translucent stripes (corrugated panels in light style) */}
       <div className="absolute inset-0 flex justify-between opacity-5">
@@ -289,7 +290,7 @@ export function HeroSection() {
           <ScrollReveal direction="up" delay={150}>
             <h1 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-ink max-w-3xl mx-auto mt-6">
               Your Money,<br />
-              <span className="bg-gradient-to-r from-accent-interactive via-[#4362d1] to-accent-gold bg-clip-text text-transparent">
+              <span className="text-primary">
                 Your Power.
               </span>
             </h1>
